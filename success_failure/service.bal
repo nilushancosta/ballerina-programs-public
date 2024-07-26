@@ -22,7 +22,7 @@ service /srvc on new http:Listener(8080) {
 
     resource function get logwithquotes() returns string|error? {
         log:printInfo("This is a \"log message\" with double quotes. This is a log message with 'single' quotes.");
-        io:println("This is a \"log message\" with double quotes printed using io:println");
+        io:println("This is the \"second entry\" with double quotes printed using io:println");
         return "Successful";
     }
 }
