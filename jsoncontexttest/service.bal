@@ -15,7 +15,7 @@ service / on new http:Listener(9090) {
                 "Content-Security-Policy": "frame-src 'self';",
                 "Content-Type": "application/fhir+json; charset=utf-8",
                 "Date": "Thu, 31 Oct 2024 02:37:21 GMT",
-                "ETag": "W/\"1\"",
+                "ETag":"W/\"1\"",
                 "Last-Modified": "Thu, 31 Oct 2024 02:37:22 GMT",
                 "Location": "https://localhost:9090/_history/1",
                 "Server": "Kestrel",
