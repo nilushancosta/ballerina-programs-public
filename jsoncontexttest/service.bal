@@ -4,7 +4,6 @@ import ballerina/log;
 # A service representing a network-accessible API
 # bound to port `9090`.
 service / on new http:Listener(9090) {
-
     resource function get contextjson() returns string|error {
         json j = {
             "httpStatusCode": 201,
@@ -27,7 +26,7 @@ service / on new http:Listener(9090) {
                 "X-Request-ID": "6b43111c2d71"
             }
         };
-        log:printInfo("This is a log entry", cont = j.toString());
+        log:printInfo("This is a log entry", cont = j);
         return "function execution complete";
     }
 }
