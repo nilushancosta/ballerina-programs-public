@@ -16,6 +16,14 @@ service /srvc on new http:Listener(8080) {
         return 5/0;
     }
 
+    resource function get jsonlog() {
+        json t = {
+          "a": "valueofa",
+          "b": "valueofb"
+        };
+        log:printInfo(t);
+    }
+
     resource function get context() returns string|error {
         log:printInfo("info log", id = 845315, name = "foo", successful = true);
         log:printInfo(string `hello`, id = 845315, name = "foo", successful = true);
