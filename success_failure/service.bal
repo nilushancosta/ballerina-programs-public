@@ -21,7 +21,7 @@ service /srvc on new http:Listener(8080) {
           "a": "valueofa",
           "b": "valueofb"
         };
-        log:printInfo(t);
+        log:printInfo(t.toString());
     }
 
     resource function get context() returns string|error {
