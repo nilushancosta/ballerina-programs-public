@@ -1,6 +1,6 @@
 import ballerina/http;
 import ballerina/log;
-
+import ballerina/lang.runtime;
 service /srvc on new http:Listener(8080) {
     resource function get success() returns string|error {
         log:printInfo("Request received at /success endpoint");
@@ -28,6 +28,12 @@ service /srvc on new http:Listener(8080) {
         log:printInfo("info log", id = 845315, name = "foo", successful = true);
         log:printInfo(string `hello`, id = 845315, name = "foo", successful = true);
         log:printInfo("info log", id = 845315, name = {"foo": "bar"});
+        return "Successful";
+    }
+
+    resource function get sleep() returns string|error {
+        log:printInfo("Request received at /sleep endpoint");
+        runtime:sleep(20000);
         return "Successful";
     }
 }
